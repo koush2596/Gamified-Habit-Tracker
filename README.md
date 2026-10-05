@@ -80,7 +80,7 @@ All derived values (coins, streaks, levels, achievements, stats) are recomputed 
 ## Architecture
 
 ```
-HabitTracker/
+Gamified-Habit-Tracker/
 ├── index.html             # Single-page app: markup, styles and logic
 ├── manifest.webmanifest   # PWA metadata (name, icons, display mode, colors)
 ├── sw.js                  # Service worker for offline support and caching
@@ -133,7 +133,7 @@ This project was built in collaboration with **Claude (Anthropic)**, used as an 
 - **Concept to prototype:** started from the idea of a gamified habit tracker and turned it into an original design built around a mountain-climb metaphor.
 - **Iterative feature development:** features were added in small, conversation-driven iterations: core tracking, then quick-add, then stats, achievements, notes, weekly recap and the to-do list.
 - **Architecture and refactoring:** moved from a hosted prototype to a standalone, installable PWA with offline support, local persistence and backup/restore.
-- **Testing:** headless smoke tests (jsdom) verified check-ins, coin calculation, notes, to-dos, achievements, recap and calendar rendering before each release.
+- **Testing:** the app was tested manually in the browser and on real phones (iPhone and Android), covering check-ins, coin and streak calculation, notes, to-dos, achievements, backup/restore and offline use. There is no automated test suite in the repository yet.
 - **Human in the loop:** product decisions, requirements, icon artwork, deployment and real-device testing were done by the developer.
 
 ## Running Locally
@@ -141,8 +141,8 @@ This project was built in collaboration with **Claude (Anthropic)**, used as an 
 The app has no dependencies and no build step. Because of the service worker, it must be served over HTTP rather than opened as a `file://` URL.
 
 ```bash
-git clone https://github.com/koush2596/HabitTracker.git
-cd HabitTracker
+git clone https://github.com/koush2596/Gamified-Habit-Tracker.git
+cd Gamified-Habit-Tracker
 
 # Option 1: Python
 python3 -m http.server 8080
@@ -158,18 +158,6 @@ Then open **http://localhost:8080** in your browser.
 2. Bump the cache version in `sw.js` (e.g. `summit-v1` → `summit-v2`) so installed apps pick up the new version.
 3. Users receive the update the next time they open the app.
 
-## Screenshots
-
-> Replace these with your own screenshots, saved in a `screenshots/` folder.
-
-| Climb | Stats | Achievements |
-|---|---|---|
-| ![Climb screen](screenshots/climb.png) | ![Stats screen](screenshots/stats.png) | ![Achievements](screenshots/achievements.png) |
-
-| To-do | Shop | Dark mode |
-|---|---|---|
-| ![To-do list](screenshots/todo.png) | ![Shop](screenshots/shop.png) | ![Dark mode](screenshots/dark.png) |
-
 ## Future Improvements
 
 - **Cloud sync:** optional account (e.g. Firebase) for syncing across devices
@@ -180,5 +168,6 @@ Then open **http://localhost:8080** in your browser.
 - **Coins for to-dos:** optional small rewards for completed tasks
 - **Data export:** CSV export for analysis in spreadsheets
 - **Automatic backups:** scheduled backup reminders or export to cloud storage
+- **Automated tests:** unit tests for the coin, streak and level logic, and end-to-end tests for the main flows
 - **Localization:** multi-language support (e.g. German)
 - **Accessibility audit:** full screen-reader and keyboard testing
