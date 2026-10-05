@@ -8,7 +8,7 @@ It is an installable Progressive Web App (PWA): it runs in the browser, can be a
 
 ## Live Demo
 
-👉 **https://koush2596.github.io/HabitTracker/**
+👉 **https://koush2596.github.io/Gamified-Habit-Tracker/**
 
 Open the link on your phone and add it to your home screen:
 - **iPhone (Safari):** Share → Add to Home Screen → Add
